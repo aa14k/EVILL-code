@@ -64,5 +64,5 @@ if __name__ == "__main__":
             f"min {np.min(regrets):5.2f}, "
             f"max {np.max(regrets):5.2f})")
 
-    if args.output_file:
+    if args.output_name:
         np.savez(f'results/{args.output_name}.npz', results)
