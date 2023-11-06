@@ -87,6 +87,9 @@ class LogTS(LogBanditAlg):
 
 class LogFPL(LogBanditAlg):
     def get_arm(self, t):
+        """The factor of 1/2 on the following line corresponds to square root of the worst-case
+        variance for the logistic bandit. This brings the effective value of a for this algorithm
+        in line with that used by LogTS and LogPHE, in the worst case."""
         z = self.a / 2 * np.sqrt(self.num_pulls) * np.random.randn(self.K)
         y = np.random.randn(self.d) * self.a
 
